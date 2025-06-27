@@ -7,6 +7,12 @@ node {
     stage('Terraform Version') {
     sh 'terraform version'
     }
+    stage('Debug workspace') {
+    sh 'pwd'
+    sh 'ls -la'
+    sh 'ls -la terraformday-1'
+    sh 'find terraformday-1 -name "*.tf"'
+     }
 
 
     stage('Terraform Plan') {
