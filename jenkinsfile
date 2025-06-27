@@ -1,29 +1,14 @@
 node {
+
     stage('Terraform Init') {
-        dir('terraformday-1') {
             sh 'terraform init'
         }
-    }
-    stage('Terraform Version') {
-    sh 'terraform version'
-    }
-    stage('Debug workspace') {
-    sh 'pwd'
-    sh 'ls -la'
-    sh 'ls -la terraformday-1'
-    sh 'find terraformday-1 -name "*.tf"'
-     }
-
-
     stage('Terraform Plan') {
-        dir('terraformday-1') {
             sh 'terraform plan'
         }
-    }
 
     stage('Terraform Apply') {
-        dir('terraformday-1') {
             sh 'terraform apply -auto-approve'
-        }
+        
     }
 }
