@@ -1,5 +1,4 @@
 node {
-  agent any
   //  stage('git clone') { 
   //    git branch: 'main', url: 'https://github.com/RohithRajTeddu/terrafrompractice.git'
   // }
