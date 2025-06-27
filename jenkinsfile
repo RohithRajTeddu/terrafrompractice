@@ -1,0 +1,21 @@
+node {
+  //  stage('git clone') { 
+  //    git branch: 'main', url: 'https://github.com/RohithRajTeddu/terrafrompractice.git'
+  // }
+
+    stage('tf init') {
+        dir('terraformday-1'){
+        sh 'terraform init'
+    }
+}
+    stage('tf plan') {
+         dir('terraformday-1'){
+         sh 'terraform plan'
+    }
+}
+    stage('tf apply') {
+         dir('terraformday-1'){
+         sh 'terraform apply -auto-approve'
+    }
+}
+}
