@@ -4,6 +4,10 @@ node {
             sh 'terraform init'
         }
     }
+    stage('Terraform Version') {
+    sh 'terraform version'
+    }
+
 
     stage('Terraform Plan') {
         dir('terraformday-1') {
